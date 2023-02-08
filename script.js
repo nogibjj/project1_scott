@@ -11,7 +11,7 @@ button_submit.addEventListener("click", (event) => {
   const userInput = input.value;
 
   // Send user input to FastAPI endpoint
-  fetch("http://127.0.0.1:8000/", {
+  fetch("http://0.0.0.0:8000/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
