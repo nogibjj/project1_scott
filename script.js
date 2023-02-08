@@ -1,9 +1,10 @@
 // Get form and input elements
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
-
+const button_submit = document.querySelector(".button-submit");
+const button_clear = document.querySelector(".button-clear");
 // Handle form submit event
-form.addEventListener("submit", (event) => {
+button_submit.addEventListener("click", (event) => {
   event.preventDefault();
 
   // Get user input value
@@ -28,3 +29,13 @@ form.addEventListener("submit", (event) => {
     });
 });
 
+button_clear.addEventListener("click", (event) => {
+  event.preventDefault();
+  // check to see if there are any <p> tags and remove them
+  const p = document.querySelectorAll("p");
+  if (p.length > 0) {
+    p.forEach((p) => {
+      p.remove();
+    });
+  }
+});

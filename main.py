@@ -4,10 +4,15 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import openai
 import os
+import config
+
+
+
 
 app = FastAPI()
 
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = config.OPENAI_API_KEY
 
 
 origins = [
@@ -30,7 +35,9 @@ async def root(request: Request):
     data = await request.json()
     input_text = data["input"]
     response = openai.Completion.create(
-     model = "GPT-3 interface",
-     prompt = input_text,   
+     model = "text-davinci-003",
+     max_tokens = 30,
+     prompt = input_text, 
+     temperature = 0  
     )
     return JSONResponse(content={"input": response['choices'][0]['text']})
