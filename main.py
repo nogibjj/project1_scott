@@ -37,7 +37,7 @@ async def root(request: Request):
     input_text = data["input"]
     response = openai.Completion.create(
      model = "text-davinci-003",
-     max_tokens = 30,
+     max_tokens = 100,
      prompt = input_text, 
      temperature = 0  
     )

@@ -140,3 +140,4 @@ dmypy.json
 
 # .gitignore
 config.py
+GPT3_interface_keypair.pem
