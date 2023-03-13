@@ -12,7 +12,7 @@ import config
 app = FastAPI()
 
 # openai.api_key = os.environ["OPENAI_API_KEY"]
-openai.api_key = config.OPENAI_API_KEY
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
 origins = [
